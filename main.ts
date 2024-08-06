@@ -26,9 +26,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 function SIDE_EFFECT (sideeffect: string) {
-    pause(1000)
-    game.showLongText(sideeffect, DialogLayout.Bottom)
-    game.setDialogTextColor(15)
+    CAT.sayText(sideeffect, 2000, true)
     if (sideeffect.includes("jump")) {
         pause(1000)
         CAT.ay = 200
