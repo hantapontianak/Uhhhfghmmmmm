@@ -11,7 +11,13 @@ namespace SpriteKind {
     export const thing = SpriteKind.create()
 }
 /**
+ * press plus bawah else you get else if
+ */
+/**
  * BANNED
+ */
+/**
+ * Jumping
  */
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     if (level > 0) {
@@ -26,9 +32,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-/**
- * press plus bawah else you get else if
- */
 function SIDE_EFFECT (sideeffect: string) {
     CAT.sayText(sideeffect, 2000, true)
     if (sideeffect.includes("jump")) {
@@ -717,6 +720,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile34`, function (sprite, 
         SIDE_EFFECT("Stinky cat")
     }
 })
+/**
+ * Jumping
+ */
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (level > 0) {
         if (CAT.vy == 0) {
@@ -1301,6 +1307,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
 })
 /**
  * FISH CODE
+ * 
+ * 1- Create fish sprite
+ * 
+ * 2- FishSpawning (Position)
+ * 
+ * 3- Eating
+ * 
+ * 4- Destroying Sprite
  */
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     sprites.destroy(FISHES)
@@ -1868,6 +1882,9 @@ level_control()
 color.setPalette(
 color.originalPalette
 )
+/**
+ * ROTATION
+ */
 forever(function () {
     if (level == 0) {
         sprites.destroy(CAT)
